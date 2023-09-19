@@ -1,13 +1,24 @@
-<h3>All Cycles</h3>
-<li *ngFor="let brand of brands">
-    <span>{{brand.id}}</span>
-    <span>{{brand.name}}</span>
-    <span>{{brand.stock}}</span>
-    <button type="button" (click)="borrow(brand)">
-        Borrow
-    </button>
-    <button type="button" (click)="restock(brand)">
-        Restock
-    </button>
-    <input id="count" [(ngModel)]="count" placeholder="count" type="number">
-</li>
+<h3 class="align-center">All Brands</h3>
+
+<table class="align-center">
+    <tr>
+        <th>Brand Id</th>
+        <th>Brand</th>
+        <th>Available</th>
+        <th>Borrow</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let brand of brands">
+        <td>{{brand.id}}</td>
+        <td>{{brand.name}}</td>
+        <td>{{brand.stock}}</td>
+        <td>
+            <button type="button" (click)="borrow(brand)">
+                Borrow
+            </button>
+        </td>
+        <td>
+            <input id="count" [(ngModel)]="count" placeholder="count" type="number">
+        </td>
+    </tr>
+</table>

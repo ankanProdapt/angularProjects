@@ -7,17 +7,27 @@ import { AllCycleComponent } from './all-cycle/all-cycle.component';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { BorrowedCycleComponent } from './borrowed-cycle/borrowed-cycle.component';
+import { AvailableCycleComponent } from './available-cycle/available-cycle.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RestockCycleComponent } from './restock-cycle/restock-cycle.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AllCycleComponent
+    AllCycleComponent,
+    BorrowedCycleComponent,
+    AvailableCycleComponent,
+    NavBarComponent,
+    RestockCycleComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

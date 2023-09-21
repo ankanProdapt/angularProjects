@@ -13,6 +13,8 @@ export class LoginFormComponent {
   constructor(private authService: AuthService) {}
 
   login() : void {
-    this.authService.login(this.username, this.password).subscribe();
+    this.authService.login(this.username, this.password).subscribe(res => {
+      if(res)
+    });
   }
 }

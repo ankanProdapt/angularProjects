@@ -1,0 +1,33 @@
+<h2>Match</h2>
+<table>
+    <tr>
+        <th>Player</th>
+        <th>Points</th>
+        <th>Games Won</th>
+        <th>Sets Won</th>
+        <th>Point to</th>
+    </tr>
+    <tr>
+        <td>{{player1.getName()}}</td>
+        <td>{{p1Score}}</td>
+        <td>{{p1Games}}</td>
+        <td>{{p1Sets}}</td>
+        <td>
+            <button type="button" (click)="update(true)">🟪</button>
+        </td>
+    </tr>
+    <tr>
+        <td>{{player2.getName()}}</td>
+        <td>{{p2Score}}</td>
+        <td>{{p2Games}}</td>
+        <td>{{p2Sets}}</td>
+        <td>
+            <button type="button" (click)="update(false)">🟨</button>
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+<div class="center-align">
+    <button type="button" (click)="reset()">Reset Match</button>
+</div>

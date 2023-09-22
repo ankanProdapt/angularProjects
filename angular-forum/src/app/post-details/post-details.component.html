@@ -5,8 +5,18 @@
     <button class="transparent-btn">👍</button>
     <span>{{post.likesCount}}</span>
     <h4>Comments:</h4>
+    <!-- <ul *ngFor="let comment of post.comments">
+        <li [ngStyle]="{'padding-left': comment.level * 50 + 'px'}">
+            <div class="border">
+                <p class="userId italic">{{comment.user.name}}</p>
+                <p class="content">{{comment.content}}</p>
+            </div>
+            <h5 onclick="toggleForm(this)">Reply ➡</h5>
+        </li>
+    </ul> -->
+
     <ul *ngFor="let comment of post.comments">
-        <li [className]="comment.level">
+        <li [style.--padding-left]="comment.level - 1" class="level">
             <div class="border">
                 <p class="userId italic">{{comment.user.name}}</p>
                 <p class="content">{{comment.content}}</p>
@@ -21,17 +31,3 @@
         </button>
     </form>
 </div>
-
-<script>
-    function addPaddingToComments() {
-        setTimeout(function () {
-            for (let i = 0; i < 100; i++) {
-                comments = document.getElementsByClassName(i);
-                for (let comment of comments) {
-                    comment.style.paddingLeft = 50 * i + "px";
-                }
-            }
-        }, 10000);
-    }
-    addPaddingToComments();
-</script>

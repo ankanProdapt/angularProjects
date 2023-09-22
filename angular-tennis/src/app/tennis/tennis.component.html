@@ -9,7 +9,7 @@
     </tr>
     <tr>
         <td>{{player1.getName()}}</td>
-        <td>{{p1Score}}</td>
+        <td>{{p1Score | score: p2Score}}</td>
         <td>{{p1Games}}</td>
         <td>{{p1Sets}}</td>
         <td>
@@ -18,7 +18,7 @@
     </tr>
     <tr>
         <td>{{player2.getName()}}</td>
-        <td>{{p2Score}}</td>
+        <td>{{p2Score | score: p1Score}}</td>
         <td>{{p2Games}}</td>
         <td>{{p2Sets}}</td>
         <td>
@@ -30,4 +30,12 @@
 <br>
 <div class="center-align">
     <button type="button" (click)="reset()">Reset Match</button>
+</div>
+<br>
+<br>
+<div class="center-align">
+    <h3>Update Players:</h3>
+    <input type="text" #p1Name placeholder="Player 1">
+    <input type="text" #p2Name placeholder="Player 2">
+    <button type="button" (click)="updatePlayers(p1Name.value, p2Name.value)">Update</button>
 </div>

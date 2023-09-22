@@ -1,10 +1,15 @@
+import { Player } from "./player";
 import { Set } from "./set";
 
 export class Match {
     private sets: Set[];
+    private player1: Player;
+    private player2: Player;
 
-    constructor() {
+    constructor(p1: Player, p2: Player) {
         this.sets = [new Set()];
+        this.player1 = p1;
+        this.player2 = p2;
     }
 
     updateMatch(pointToP1: boolean): void {

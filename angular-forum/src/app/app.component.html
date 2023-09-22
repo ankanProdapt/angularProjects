@@ -1,0 +1,5 @@
+<h1>Forum</h1>
+<label for="postId">Enter Post Id: </label>
+<input type="number" name="postId" id="postId" #postId>
+<button type="button" (click)="redirectToPost(postId.valueAsNumber)">Get Post</button>
+<router-outlet></router-outlet>

@@ -1,0 +1,37 @@
+<div *ngIf="post">
+    <h1>{{post.title}}</h1>
+    <h3>Author: {{post.author.name}}</h3>
+    <p>{{post.content}}</p>
+    <button class="transparent-btn">👍</button>
+    <span>{{post.likesCount}}</span>
+    <h4>Comments:</h4>
+    <ul *ngFor="let comment of post.comments">
+        <li [className]="comment.level">
+            <div class="border">
+                <p class="userId italic">{{comment.user.name}}</p>
+                <p class="content">{{comment.content}}</p>
+            </div>
+            <h5 onclick="toggleForm(this)">Reply ➡</h5>
+        </li>
+    </ul>
+    <form action="#" th:action="@{/forum/post/{id}(id = ${post.id})}" method="get">
+        <input id="limit" type="text" name="limit" hidden="true">
+        <button onclick="incrementCount()" class="transparent-btn">
+            Load More Comments...
+        </button>
+    </form>
+</div>
+
+<script>
+    function addPaddingToComments() {
+        setTimeout(function () {
+            for (let i = 0; i < 100; i++) {
+                comments = document.getElementsByClassName(i);
+                for (let comment of comments) {
+                    comment.style.paddingLeft = 50 * i + "px";
+                }
+            }
+        }, 10000);
+    }
+    addPaddingToComments();
+</script>

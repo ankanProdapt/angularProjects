@@ -5,4 +5,8 @@ export class Player {
     getName(): string {
         return this.name;
     }
+
+    setName(name: string): void {
+        this.name = name;
+    }
 }

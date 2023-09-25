@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Section</th>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Option</th>
+    </tr>
+    <tr *ngFor="let section of sections">
+        <td>{{section.id}}</td>
+        <td>{{section.products[0]}}</td>
+        <td>{{section.products[1]}}</td>
+        <td>{{section.products[2]}}</td>
+        <td>
+            <button>Open/Close</button>
+        </td>
+    </tr>
+</table>

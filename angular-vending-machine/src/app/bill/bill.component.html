@@ -1,0 +1,10 @@
+<h1>Bill</h1>
+<ul>
+    <li *ngFor="let product of bill?.purchasedProducts">
+        <span>Product Name: {{product.name}}</span>
+        <span>Quantity: {{product.quantity}}</span>
+        <span>Cost: {{product.cost * product.quantity}}</span>
+    </li>
+</ul>
+<h3>Total Cost: {{getTotalCost() | currency}}</h3>
+<button type="button" (click)="goBack()">Pay & Return</button>

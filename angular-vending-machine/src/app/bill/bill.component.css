@@ -1,0 +1,41 @@
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: #333333;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+}
+
+span {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333333;
+}
+
+h3 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333333;
+    text-align: right;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}

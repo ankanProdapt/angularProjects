@@ -7,12 +7,27 @@
         <th>Option</th>
     </tr>
     <tr *ngFor="let section of sections">
-        <td>{{section.id}}</td>
-        <td>{{section.products[0]}}</td>
-        <td>{{section.products[1]}}</td>
-        <td>{{section.products[2]}}</td>
+        <td><h2>{{section.id}}</h2></td>
+        <td *ngFor="let product of section.products">
+            <h3>Product: {{product.name}}</h3>
+            <p>Id: {{product.id}}</p>
+            <p>Cost: {{product.cost}}</p>
+            <p>Quantity: {{product.quantity}}</p>
+            <div *ngIf="selectedSection == section.id">
+                <button type="button" (click)="updateProductQuantity(product, 1)">🔼</button>
+                <h3>{{getSelectedProductCount(product.id)}}</h3>
+                <button type="button" (click)="updateProductQuantity(product, -1)">🔽</button>
+            </div>
+        </td>
         <td>
-            <button>Open/Close</button>
+            <button type="button" (click)="toggleDoor(section.id)">
+                <h3 *ngIf="selectedSection != section.id">Open</h3>
+                <h3 *ngIf="selectedSection == section.id">Close</h3>
+            </button>
         </td>
     </tr>
 </table>
+
+<label for="productId">Enter Product Id: </label>
+<input type="number" name="productId" id="productId" value="1" #pId>
+<button type="button" (click)="openSectionContaining(pId.valueAsNumber)">Submit</button>
